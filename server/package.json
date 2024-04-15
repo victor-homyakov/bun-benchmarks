@@ -1,0 +1,29 @@
+{
+  "name": "json-stream-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start-json-bun-serve": "echo Bun.serve && bun -v && cross-env PORT=3001 bun json-stream/server.bun-serve.js",
+    "start-json-bun-http": "echo Bun http && bun -v && cross-env PORT=3001 bun json-stream/server.http.js",
+    "start-json-node-http": "echo Node http && node -v && cross-env PORT=3001 node json-stream/server.http.js",
+    "start-json-node-uws": "echo Node uWebSockets && node -v && cross-env PORT=3001 node json-stream/server.uws.js",
+    "start-ssr-bun-serve": "echo Bun.serve && bun -v && cross-env NODE_ENV=production PORT=3001 bun react-ssr/server.bun-serve.js",
+    "start-ssr-bun-http": "echo Bun http && bun -v && cross-env NODE_ENV=production PORT=3001 bun react-ssr/server.http.js",
+    "start-ssr-node-http": "echo Node http && node -v && cross-env NODE_ENV=production PORT=3001 node react-ssr/server.http.js",
+    "start-ssr-node-uws": "echo Node uWebSockets && node -v && cross-env NODE_ENV=production PORT=3001 node react-ssr/server.uws.js",
+    "autocannon": "npx autocannon localhost:3001 --warmup [ -c 1 -d 3 ] --renderStatusCodes",
+    "autocannon-forever": "npx autocannon localhost:3001 --renderStatusCodes --forever",
+    "k6-smoke": "k6 run k6-script-smoke.js",
+    "k6-breakpoint": "k6 run k6-script-breakpoint.js --out web-dashboard",
+    "curl": "curl -v http://localhost:3001",
+    "test": "exit 1"
+  },
+  "dependencies": {
+    "@discoveryjs/json-ext": "0.5.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.43.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
