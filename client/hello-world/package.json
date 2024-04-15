@@ -1,0 +1,12 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "bun -v && node -v && hyperfine --warmup 3 'bun hello-world.js' 'node hello-world.js'",
+    "test-long": "hyperfine --warmup 20 'bun hello-world.js' '~/.nvm/versions/node/v20.12.0/bin/node hello-world.js' '~/.nvm/versions/node/v18.18.2/bin/node hello-world.js' '~/.nvm/versions/node/v16.19.1/bin/node hello-world.js'"
+  },
+  "author": "",
+  "license": "ISC"
+}
