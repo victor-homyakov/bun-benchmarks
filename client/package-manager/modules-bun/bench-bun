@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+bun -v
+bun pm cache rm && time bun install
+bun pm cache rm && rm -rf node_modules && time bun install
+rm -rf node_modules && time bun install
+time bun install

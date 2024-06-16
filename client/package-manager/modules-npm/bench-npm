@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+node -v && npm -v
+npm cache clean --force && time npm install
+npm cache clean --force && rm -rf node_modules && time npm install
+rm -rf node_modules && time npm install
+time npm install

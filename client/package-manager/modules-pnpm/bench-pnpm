@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+node -v && pnpm -v
+pnpm store prune && time pnpm install
+pnpm store prune && rm -rf node_modules && time pnpm install
+rm -rf node_modules && time pnpm install
+time pnpm install
