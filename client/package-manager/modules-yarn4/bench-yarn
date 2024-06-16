@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+node -v && yarn -v
+yarn cache clean --all && time yarn
+yarn cache clean --all && rm -rf node_modules && time yarn
+rm -rf node_modules && time yarn
+time yarn
