@@ -1,4 +1,6 @@
-MacBook M1:
+# MacBook M1
+
+## Bun 1.0.8
 
 ```
 $ bun -v
@@ -23,7 +25,7 @@ bun install  0,02s user 0,06s system 39% cpu 0,217 total
 
 Размеры полученных артефактов: папка node_modules около 1,1ГБ, локфайл bun.lockb 679476.
 
-MacBook M1:
+## Bun 1.1.21
 
 ```
 $ bun -v
@@ -68,3 +70,65 @@ $ time bun install --backend=copyfile
 Checked 2311 installs across 1672 packages (no changes) [216.00ms]
 bun install --backend=copyfile  0,03s user 0,11s system 60% cpu 0,231 total
 ```
+
+# Windows WSL2 Ubuntu 20.04
+
+```
+$ bun -v
+1.1.21
+
+# первая установка
+$ bun pm cache rm && time bun install
+1671 packages installed [17.96s]
+bun install  2.24s user 4.75s system 38% cpu 17.976 total
+
+$ bun pm cache rm && rm -rf node_modules && time bun install
+1671 packages installed [5.46s]
+bun install  0.85s user 4.41s system 96% cpu 5.463 total
+
+# переустановка
+$ rm -rf node_modules && time bun install
+1671 packages installed [1485.00ms]
+bun install  0.05s user 1.40s system 97% cpu 1.489 total
+
+# валидация
+$ time bun install
+Checked 2297 installs across 1673 packages (no changes) [38.00ms]
+bun install  0.01s user 0.03s system 112% cpu 0.041 total
+```
+
+Размеры полученных артефактов: папка node_modules 537331КБ, локфайл bun.lockb 684407.
+
+# Windows 10
+
+ptime 1.0 for Win32, Freeware - http://www.pc-tools.net/ Copyright(C) 2002, Jem Berkes <jberkes@pc-tools.net>
+
+```
+>bun -v
+1.1.21
+
+>bun pm cache rm && ptime bun install
+1671 packages installed [60.55s]
+Execution time: 60.665 s
+
+>bun pm cache rm && rm -rf node_modules && ptime bun install
+1671 packages installed [59.28s]
+Execution time: 59.380 s
+
+>bun pm cache rm && rm -rf node_modules && ptime bun install
+1671 packages installed [54.60s]
+Execution time: 54.703 s
+
+>rm -rf node_modules && ptime bun install
+1671 packages installed [53.74s]
+Execution time: 53.864 s
+
+>ptime bun install
+Checked 2295 installs across 1673 packages (no changes) [742.00ms]
+Execution time: 0.787 s
+```
+
+Размеры полученных артефактов: папка node_modules 1055МБ, локфайл bun.lockb 684487.
+Внутри node_modules Bun создал папку .cache, в которой кэш тех же файлов, поэтому размер в два раза больше.
+
+Первая установка и переустановка - процессор занят полностью, работает Antimalware Service Executable. Bun в это время занимает 6-8%. Затем антивирус успокаивается, Bun занимает около 30%.
