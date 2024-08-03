@@ -6,11 +6,11 @@
 $ bun -v
 1.0.8
 
-# первая установка
+# холодная первая установка
 $ bun pm cache rm && time bun install
 bun install  2,23s user 7,30s system 47% cpu 20,174 total
 
-# ещё раз сценарий "первая установка"
+# горячая первая установка
 $ bun pm cache rm && rm -rf node_modules && time bun install
 bun install  1,44s user 13,90s system 103% cpu 14,827 total
 
@@ -31,12 +31,12 @@ bun install  0,02s user 0,06s system 39% cpu 0,217 total
 $ bun -v
 1.1.21
 
-# первая установка
+# холодная первая установка
 $ bun pm cache rm && time bun install
 1671 packages installed [30.63s]
 bun install  1,78s user 6,23s system 26% cpu 30,652 total
 
-# ещё раз сценарий "первая установка"
+# горячая первая установка
 $ bun pm cache rm && rm -rf node_modules && time bun install
 1671 packages installed [5.03s]
 bun install  0,88s user 12,58s system 266% cpu 5,046 total
@@ -71,17 +71,47 @@ Checked 2311 installs across 1672 packages (no changes) [216.00ms]
 bun install --backend=copyfile  0,03s user 0,11s system 60% cpu 0,231 total
 ```
 
+# MacBook i7
+
+```
+$ bun -v
+1.1.21
+
+# холодная первая установка
+$ bun pm cache rm && time bun install
+1672 packages installed [45.02s]
+bun install  3,39s user 15,39s system 41% cpu 45,082 total
+
+# горячая первая установка
+$ bun pm cache rm && rm -rf node_modules && time bun install
+1672 packages installed [7.96s]
+bun install  1,96s user 21,63s system 295% cpu 7,990 total
+
+# переустановка
+$ rm -rf node_modules && time bun install
+1672 packages installed [2.82s]
+bun install  0,05s user 1,89s system 68% cpu 2,825 total
+
+# валидация
+$ time bun install
+Checked 2305 installs across 1673 packages (no changes) [663.00ms]
+bun install  0,06s user 0,24s system 43% cpu 0,674 total
+```
+
+Размеры полученных артефактов: папка node_modules 545218КБ, локфайл bun.lockb 684511.
+
 # Windows WSL2 Ubuntu 20.04
 
 ```
 $ bun -v
 1.1.21
 
-# первая установка
+# холодная первая установка
 $ bun pm cache rm && time bun install
 1671 packages installed [17.96s]
 bun install  2.24s user 4.75s system 38% cpu 17.976 total
 
+# горячая первая установка
 $ bun pm cache rm && rm -rf node_modules && time bun install
 1671 packages installed [5.46s]
 bun install  0.85s user 4.41s system 96% cpu 5.463 total
