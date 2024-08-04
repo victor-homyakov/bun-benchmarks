@@ -1,7 +1,11 @@
 #!/bin/zsh
 
 node -v && yarn -v
+# холодная первая установка
 yarn cache clean --all && time yarn
+# горячая первая установка
 yarn cache clean --all && rm -rf node_modules && time yarn
+# переустановка
 rm -rf node_modules && time yarn
+# валидация
 time yarn

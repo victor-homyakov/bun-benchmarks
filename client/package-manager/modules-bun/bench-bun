@@ -1,7 +1,11 @@
 #!/bin/zsh
 
 bun -v
+# холодная первая установка
 bun pm cache rm && time bun install
+# горячая первая установка
 bun pm cache rm && rm -rf node_modules && time bun install
+# переустановка
 rm -rf node_modules && time bun install
+# валидация
 time bun install

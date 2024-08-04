@@ -1,7 +1,11 @@
 #!/bin/zsh
 
 node -v && npm -v
+# холодная первая установка
 npm cache clean --force && time npm install
+# горячая первая установка
 npm cache clean --force && rm -rf node_modules && time npm install
+# переустановка
 rm -rf node_modules && time npm install
+# валидация
 time npm install
