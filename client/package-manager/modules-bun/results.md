@@ -23,7 +23,7 @@ $ time bun install
 bun install  0,02s user 0,06s system 39% cpu 0,217 total
 ```
 
-Размеры полученных артефактов: папка node_modules около 1,1ГБ, локфайл bun.lockb 679476.
+Размеры: node_modules около 1,1ГБ, локфайл bun.lockb 679476
 
 ## Bun 1.1.21
 
@@ -52,7 +52,7 @@ Checked 2311 installs across 1672 packages (no changes) [270.00ms]
 bun install  0,02s user 0,12s system 49% cpu 0,276 total
 ```
 
-Размеры полученных артефактов: папка node_modules 554820КБ, локфайл bun.lockb 684262.
+Размеры: node_modules 554820КБ, локфайл bun.lockb 684262
 
 ```
 # первая установка
@@ -98,7 +98,7 @@ Checked 2305 installs across 1673 packages (no changes) [663.00ms]
 bun install  0,06s user 0,24s system 43% cpu 0,674 total
 ```
 
-Размеры полученных артефактов: папка node_modules 545218КБ, локфайл bun.lockb 684511.
+Размеры: node_modules 545218КБ, локфайл bun.lockb 684511
 
 # Windows WSL2 Ubuntu 20.04
 
@@ -127,7 +127,7 @@ Checked 2297 installs across 1673 packages (no changes) [38.00ms]
 bun install  0.01s user 0.03s system 112% cpu 0.041 total
 ```
 
-Размеры полученных артефактов: папка node_modules 537331КБ, локфайл bun.lockb 684407.
+Размеры: node_modules 537331КБ, локфайл bun.lockb 684407
 
 # Windows 10
 
@@ -158,7 +158,8 @@ Checked 2295 installs across 1673 packages (no changes) [742.00ms]
 Execution time: 0.787 s
 ```
 
-Размеры полученных артефактов: папка node_modules 1055МБ, локфайл bun.lockb 684487.
+Размеры: node_modules 1055МБ, локфайл bun.lockb 684487
+
 Внутри node_modules Bun создал папку .cache, в которой кэш тех же файлов, поэтому размер в два раза больше.
 
 Первая установка и переустановка - процессор занят полностью, работает Antimalware Service Executable. Bun в это время занимает 6-8%. Затем антивирус успокаивается, Bun занимает около 30%.
