@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+node -v && pnpm -v
+# холодная первая установка
+pnpm store prune && time pnpm install --prefer-offline
+# горячая первая установка
+pnpm store prune && rm -rf node_modules && time pnpm install --prefer-offline
+# переустановка
+rm -rf node_modules && time pnpm install --prefer-offline
+# валидация
+time pnpm install --prefer-offline
