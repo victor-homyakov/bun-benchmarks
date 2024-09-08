@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+node -v && npm -v
+# переустановка через npm ci с пустым node_modules
+rm -rf node_modules && time npm ci
+# переустановка через npm ci с пустым node_modules, не выполняем скрипты из пакетов
+rm -rf node_modules && time npm ci --ignore-scripts=true --audit=false --fund=false
+# здесь npm сам удаляет node_modules
+time npm ci
