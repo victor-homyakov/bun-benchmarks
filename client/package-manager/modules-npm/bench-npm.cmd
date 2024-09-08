@@ -1,9 +1,9 @@
 rem Install ptime 1.0 for Win32 from http://www.pc-tools.net/
-node -v && npm -v
+call node -v && call npm -v
 rem холодная первая установка
-npm cache clean --force && ptime npm install
+call npm cache clean --force && ptime npm install
 rem горячая первая установка
-npm cache clean --force && rm -rf node_modules && ptime npm install
+call npm cache clean --force && rm -rf node_modules && ptime npm install
 rem переустановка
 rm -rf node_modules && ptime npm install
 rem валидация

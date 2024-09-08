@@ -200,4 +200,29 @@ npm install 6.55s user 0.71s system 123% cpu 5.900 total
 
 # Windows 10
 
-TODO
+```
+v22.5.1
+10.8.2
+
+added 2060 packages, and audited 2061 packages in 3m
+Execution time: 167.214 s
+
+added 2060 packages, and audited 2061 packages in 29s
+Execution time: 29.503 s
+
+added 2060 packages, and audited 2061 packages in 28s
+Execution time: 28.598 s
+
+up to date, audited 2061 packages in 3s
+Execution time: 3.714 s
+```
+
+Размеры: node_modules 527777КБ, локфайл package-lock.json 999701
+
+progress=false
+
+```
+Execution time: 87.123 s
+Execution time: 28.088 s
+Execution time: 3.715 s
+```
