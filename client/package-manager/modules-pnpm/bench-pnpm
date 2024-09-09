@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+rm -rf node_modules
+rm -f pnpm-lock.yaml
+
 node -v && pnpm -v
 # холодная первая установка
 pnpm store prune && time pnpm install

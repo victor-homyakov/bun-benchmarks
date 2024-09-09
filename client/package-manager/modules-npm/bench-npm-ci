@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+rm -rf node_modules
+rm -f package-lock.json
+
 node -v && npm -v
 # переустановка через npm ci с пустым node_modules
 rm -rf node_modules && time npm ci

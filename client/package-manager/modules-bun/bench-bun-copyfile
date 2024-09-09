@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+rm -rf node_modules
+rm -f bun.lockb
+
+bun -v
+# холодная первая установка
+bun pm cache rm && time bun install --backend=copyfile
+# горячая первая установка
+bun pm cache rm && rm -rf node_modules && time bun install --backend=copyfile
+# переустановка
+rm -rf node_modules && time bun install --backend=copyfile
+# валидация
+time bun install --backend=copyfile

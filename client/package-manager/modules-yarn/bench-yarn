@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+rm -rf node_modules
+rm -f yarn.lock
+
 node -v && yarn -v
 # холодная первая установка
 yarn cache clean --all && time yarn

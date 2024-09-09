@@ -1,3 +1,6 @@
+rm -rf node_modules
+rm -f package-lock.json
+
 rem Install ptime 1.0 for Win32 from http://www.pc-tools.net/
 call node -v && call npm -v
 rem холодная первая установка

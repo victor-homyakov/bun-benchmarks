@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+rm -rf node_modules
+rm -f package-lock.json
+
 node -v && npm -v
 # холодная первая установка
 npm cache clean --force && time npm install

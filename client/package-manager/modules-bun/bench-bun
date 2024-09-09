@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+rm -rf node_modules
+rm -f bun.lockb
+
 bun -v
 # холодная первая установка
 bun pm cache rm && time bun install
